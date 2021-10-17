@@ -81,28 +81,13 @@ function printCitizens()
 end
 
 function sleepCheck()
-    -- guards = 0
-    -- shouldSleep = colony.amountOfCitizens()
     allTucked = true
     for k, v in ipairs(colony.getCitizens()) do
-        -- if v.work.name ~= "com.minecolonies.coremod.job.Ranger" and v.work.name ~= "com.minecolonies.coremod.job.Knight" and v.state ~= "Sleeping zZZ" then
         if v.work.name ~= "com.minecolonies.coremod.job.Ranger" and v.work.name ~= "com.minecolonies.coremod.job.Knight" and not v.isAsleep then 
             allTucked = false
             print(v.name.. " ist noch nicht im Bett, Job: " ..v.work.name)
         end
-        -- if v.work.name == "com.minecolonies.coremod.job.Ranger" or v.work.name == "com.minecolonies.coremod.job.Knight" then
-        --     guards = guards + 1
-        --     shouldSleep = shouldSleep - 1
-        -- end
-        -- if v.state == "Sleeping zZZ" then
-        --     shouldSleep = shouldSleep - 1
-        -- end
     end
-    -- if shouldSleep then
-    --     centerTextT("yes", 4, colors.black, colors.white, "head")
-    -- else
-    --     centerTextT("no", 4, colors.black, colors.white, "head")
-	-- end
     if allTucked then
         monT.setBackgroundColor(colors.green)
         monT.clear()
