@@ -107,7 +107,7 @@ end
 while true do
 	prepareMonitorL()
     printCitizens()
-    if(os.time() < 12.000 and os.time() > 0.541) then
+    if(os.time() < 6.000 and os.time() > 18.541) then
         prepareMonitorT()
         sleepCheck()
     else
