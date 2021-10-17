@@ -85,7 +85,7 @@ function sleepCheck()
     for k, v in ipairs(colony.getCitizens()) do
         if v.work.name ~= "com.minecolonies.coremod.job.Ranger" and v.work.name ~= "com.minecolonies.coremod.job.Knight" and not v.isAsleep then 
             allTucked = false
-            print(v.name.. " ist noch nicht im Bett, Job: " ..v.work.name)
+            print(v.work.name.. " not sleeping - name: " ..v.name) -- error message
         end
     end
     if allTucked then
@@ -94,7 +94,7 @@ function sleepCheck()
         centerTextT("Everyone", 1, colors.green, colors.white, "head")
         centerTextT("in Bed?", 2, colors.green, colors.white, "head")
         centerTextT("yes", 4, colors.green, colors.white, "head")
-        print("allTucked - true")
+        print("allTucked - true") -- testausgabe
     else
         monT.setBackgroundColor(colors.red)
         monT.clear()
@@ -114,7 +114,7 @@ while true do
         monT.setBackgroundColor(colors.black)
         monT.clear()
         centerTextT("Not Night", 3, colors.black, colors.white, "head")
-        print(os.time())
+        print(os.time()) -- testausgabe
     end
     sleep(10)
 end
