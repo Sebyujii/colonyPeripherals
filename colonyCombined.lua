@@ -83,7 +83,7 @@ end
 function sleepCheck()
     allTucked = true
     for k, v in ipairs(colony.getCitizens()) do
-        if v.work.name ~= "com.minecolonies.coremod.job.Ranger" and v.work.name ~= "com.minecolonies.coremod.job.Knight" and not v.isAsleep then 
+        if v.work.name ~= "com.minecolonies.coremod.job.Ranger" and v.work.name ~= "com.minecolonies.coremod.job.Knight" and v.state ~= "Sick" and not v.isAsleep then
             allTucked = false
             print(v.work.name.. " not sleeping - name: " ..v.name.. " state: " ..v.state) -- error message
         end
